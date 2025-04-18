@@ -501,7 +501,7 @@ class TestUfunc:
     @pytest.mark.parametrize("get_kwarg", [
             param(lambda x: {"dtype": x}, id="dtype"),
             param(lambda x: {"signature": (x, None, None)}, id="signature")])
-    def test_signature_dtype_instances_allowed(self, get_kwarg):
+    def test_signature_dtype_instances_allowed_2(self, get_kwarg):
         msg = "The `dtype` and `signature` arguments to ufuncs"
 
         with pytest.raises(TypeError, match=msg):

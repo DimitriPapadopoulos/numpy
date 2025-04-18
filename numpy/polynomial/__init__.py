@@ -114,11 +114,17 @@ Misc
 - ``p.truncate(size)`` -- Truncate ``p`` to given size
 
 """
+import polynomial
 from .polynomial import Polynomial
+import chebyshev
 from .chebyshev import Chebyshev
+import legendre
 from .legendre import Legendre
+import hermite
 from .hermite import Hermite
+import hermite_e
 from .hermite_e import HermiteE
+import laguerre
 from .laguerre import Laguerre
 
 __all__ = [

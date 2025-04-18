@@ -15,7 +15,6 @@ import pickle
 
 import numpy as np
 from . import format
-from ._datasource import DataSource
 from ._format_impl import _MAX_HEADER_SIZE
 from numpy._core import overrides
 from numpy._core.multiarray import packbits, unpackbits

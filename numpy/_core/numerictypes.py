@@ -80,6 +80,7 @@ import numbers
 import warnings
 
 from . import multiarray as ma
+from . import (object_, integer, inexact, floating, number)
 from .multiarray import (
         ndarray, dtype, datetime_data, datetime_as_string,
         busday_offset, busday_count, is_busday, busdaycalendar

@@ -73,7 +73,7 @@ class NAType:
         raise TypeError("boolean value of NA is ambiguous")
 
     def __hash__(self):
-        exponent = 31 if is_32bit else 61
+        exponent = 31 if is_32bit else 61  # FIXME  # noqa: F821
         return 2**exponent - 1
 
     def __reduce__(self):
@@ -123,7 +123,7 @@ class NAType:
                 return type(other)(1)
             else:
                 return pd_NA
-        elif util.is_array(other):
+        elif util.is_array(other):  # FIXME  # noqa: F821
             return np.where(other == 0, other.dtype.type(1), pd_NA)
 
         return NotImplemented
@@ -136,7 +136,7 @@ class NAType:
                 return other
             else:
                 return pd_NA
-        elif util.is_array(other):
+        elif util.is_array(other):  # FIXME  # noqa: F821
             return np.where(other == 1, other, pd_NA)
         return NotImplemented
 
@@ -178,7 +178,7 @@ class NAType:
 
         if method != "__call__":
             raise ValueError(f"ufunc method '{method}' not supported for NA")
-        result = maybe_dispatch_ufunc_to_dunder_op(
+        result = maybe_dispatch_ufunc_to_dunder_op(  # noqa: F821
             self, ufunc, method, *inputs, **kwargs
         )
         if result is NotImplemented:

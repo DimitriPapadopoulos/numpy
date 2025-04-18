@@ -112,9 +112,10 @@ try:
     from mypy.build import PRI_MED
 
 except ModuleNotFoundError as e:
+    initial_exception = e
 
     def plugin(version: str) -> type:
-        raise e
+        raise initial_exception
 
 else:
 

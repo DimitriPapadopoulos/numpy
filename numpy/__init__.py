@@ -498,8 +498,8 @@ else:
         had a bug fix which probably fixed this:
         https://github.com/torvalds/linux/commit/7cf91a98e607c2f935dbcc177d70011e95b8faff
         """
-        use_hugepage = os.environ.get("NUMPY_MADVISE_HUGEPAGE", None)
-        if sys.platform == "linux" and use_hugepage is None:
+        use_hugepage = os.environ.get("NUMPY_MADVISE_HUGEPAGE", None)  # noqa: F821 (ruff bug?)
+        if sys.platform == "linux" and use_hugepage is None:  # noqa: F821 (ruff bug?)
             # If there is an issue with parsing the kernel version,
             # set use_hugepage to 0. Usage of LooseVersion will handle
             # the kernel version parsing better, but avoided since it
@@ -507,7 +507,7 @@ else:
             # See: #16679 for related discussion.
             try:
                 use_hugepage = 1
-                kernel_version = os.uname().release.split(".")[:2]
+                kernel_version = os.uname().release.split(".")[:2]  # noqa: F821 (ruff bug?)
                 kernel_version = tuple(int(v) for v in kernel_version)
                 if kernel_version < (4, 6):
                     use_hugepage = 0

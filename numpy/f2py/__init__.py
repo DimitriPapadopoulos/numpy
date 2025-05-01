@@ -16,7 +16,6 @@ import warnings
 
 from numpy.exceptions import VisibleDeprecationWarning
 from . import f2py2e
-from . import diagnose
 
 run_main = f2py2e.run_main
 main = f2py2e.main

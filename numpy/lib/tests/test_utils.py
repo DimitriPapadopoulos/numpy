@@ -19,7 +19,7 @@ def test_info_method_heading():
         pass
 
     class WithPublicMethods:
-        def first_method():
+        def first_method(self):
             pass
 
     def _has_method_heading(cls):
